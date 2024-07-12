@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPER MARIO EACH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+    $(function(){
+
+        $(".logo").fadeIn();
+
+        $(".logo").click(function(){
+            $(".box h1").text("Super Mario").css({"color" : "gray"});
+
+            $(".box img").each(function(i){
+                $(this).delay( i * 500 ).toggleClass("drap", 1000, "easeOutElastic");
+            
+            })//each
+
+        })// click logo
+
+
+        $(".box img").click(function(){
+
+            var txt = $(this).attr("alt");
+            var col = $(this).attr("data-color");
+
+            $(".box h1").text(txt).css({color : col});
+
+        }) // .box img click
+        
+    })// jquery end
+    </script>
+
+
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+    *{margin: 0; padding: 0;}
+
+
+    .lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    body{
+        font-family: "Lobster", sans-serif;
+        text-align: center;
+        padding-top: 5%;
+        overflow-y: hidden;
+    }
+
+
+    .box{
+        height: 400px;
+        /* border: 1px solid red; */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .box h1{
+        font-size: 100px;
+        color: gray;
+        height: 200px;
+    }
+
+    .box img{
+        position: relative;
+        top: -1500px;
+        opacity: 0;
+    }
+
+    .box img.drap{
+        top: 0;
+        opacity: 1;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    img{
+        vertical-align: bottom;
+        cursor: pointer;
+    }
+
+    </style>
+
+
+</head>
+<body>
+
+    <img src="img/logo.png" alt="logo" class="logo">
+
+    <div class="box">
+
+        <h1>Super Mario</h1>
+
+        <img src="img/icon01.png" alt="Mario" data-color="red">
+        <img src="img/icon02.png" alt="Luigi" data-color="green">
+        <img src="img/icon03.png" alt="Toad" data-color="yellow">
+
+    </div><!-- box -->
+
+
+    
+</body>
+</html>

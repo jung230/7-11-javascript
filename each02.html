@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+
+        body{
+            background-color: seashell;
+            padding: 50px;
+        }
+
+        .color_picker div{
+            width: 80px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer;
+            border: 5px solid black;
+            border-radius: 10px 0 10px 0;
+        }
+
+
+        .color{}
+        .color div{
+            width: 80px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 5px solid white; 
+            color: whitesmoke; font-weight: bold;
+            display: inline-block;
+            margin-right: 20px;
+            margin-top: 30px;
+            border-radius: 17px;
+            cursor: pointer;
+        }
+
+
+    </style>
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+
+        $(function(){
+            
+            $(".color_picker div").each(function(i){
+                var bg = $(this).text();
+                console.log(bg);
+
+                $(this).css("background" , bg);
+            })//
+        
+            $(".color_picker div").click(function(){
+
+                var bg = $(this).text();
+                $("body").animate({"background-color" :bg }, 700);
+            })// click
+
+
+
+            $(".color div").each(function(){
+                var bg_1 = $(this).attr("data");
+                $(this).css("background" , bg_1);
+            })
+
+            $(".color div").click(function(){
+                var bg_2 = $(this).attr("data");
+                $("body").animate({"background-color" :bg_2}, 500);
+
+            })//color div click
+
+
+
+        })
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <h1>배경 색 변경하기</h1>
+
+    <div class="color_picker">
+        <div>yellow</div>
+        <div>#7e6c69</div>
+        <div>#f0f</div>
+        <div>#00f</div>
+        <div>#05789a</div>
+    </div><!-- color_picker -->
+
+
+    <div class="color">
+
+        <div data="red">빨강</div>
+        <div data="orange">주황</div>
+        <div data="yellow">노랑</div>
+        <div data="green">초록</div>
+        <div data="blue">파랑</div>
+        <div data="indigo">남색</div>
+        <div data="purple">보라</div>
+
+    </div><!-- color -->
+
+    
+
+
+</body>
+</html>

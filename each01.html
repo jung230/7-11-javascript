@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each 복습</title>
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+        $(function(){
+            $(".first") // > class 선택자
+            $("h1") // > 태그(tag) 선택자
+            $("#first") // > #(id) 선택자
+            
+            var txt = $(".first").text("one");
+            console.log("txt : " , txt);
+            
+            var col = $(".first").css("color", "red");
+            console.log("color : ", col);
+            
+            var path = $("img").attr("src", "img/001.jpg");
+            console.log("path : ", path);
+
+            $(".list li").each(function(index){
+                console.log("index : " , index);
+                console.log("index: ", this);
+                console.log("this text :", $(this).text());
+                console.log("this data :", $(this).attr("data"));
+
+                $(this).text($(this).attr("data"));
+
+            })// list li each
+
+            
+            
+        })// jquery end
+        
+        </script>
+
+    <style type="text/css">
+
+        .first{color: seagreen;}
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="box">
+        <h1>Each Event</h1>
+
+        <ul class="list">
+            <li class="first" data="1" >하나</li>
+            <li data="2">둘</li>
+            <li data="3">셋</li>
+            <li data="4">넷</li>
+            <li data="5">다섯</li>
+        </ul>
+
+        <img src="img/002.jpg" alt="002">
+        <a href="#"></a>
+
+        
+
+
+    </div><!-- box -->
+
+</body>
+</html>

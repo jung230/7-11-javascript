@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        ul,li,ol{list-style: none;}
+        a{text-decoration: none; color: inherit;}
+
+        .menu{
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu li{}
+        
+        .menu li a{
+            display: block;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 0 0 100px 100px;
+            width: 150px;
+            height: 200px;
+            opacity: 0.5;
+        }
+
+    </style>
+
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+
+        $(function(){
+
+            $(".menu li").each(function(i){
+
+                var bg_col = $(this).find("a").attr("bg");
+                $(this).find("a").css({background : bg_col});
+            })// each
+
+            $(".menu li a").css({"margin-top" : "-155px"})
+
+            $(".menu li a").hover(function(){
+
+                $(this).stop().animate({"margin-top" : "0px" , "opacity" : "1"}, 1000);
+                
+            }, function(){
+
+                $(this).stop().animate({"margin-top" : "-155px" , "opacity" : "1"}, 1000);
+                
+            })//hover
+            
+
+
+        })
+
+    </script>
+
+
+</head>
+<body>
+
+    <ul class="menu">
+
+        <li><a href="#" bg="red">menu01</a></li>
+        <li><a href="#" bg="orange">menu02</a></li>
+        <li><a href="#" bg="yellow">menu03</a></li>
+        <li><a href="#" bg="green">menu04</a></li>
+        <li><a href="#" bg="blue">menu05</a></li>
+        <li><a href="#" bg="indigo">menu06</a></li>
+        <li><a href="#" bg="purple">menu07</a></li>
+
+    </ul>
+
+    
+    
+</body>
+</html>

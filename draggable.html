@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+
+        $(function(){
+
+            var i = 1; //전역변수
+            
+            $(".test img").draggable({
+                containment:"parent"
+            }).mousedown(function(){
+                $(this).css({"z-index" : i++})
+            })//draggable
+
+            
+
+        })
+
+    </script>
+
+    <style type="text/css">
+
+        .test{
+            width: 500px;
+            height: 500px;
+            border: 5px solid yellowgreen;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="test">
+        <img src="img/normal_01.png" alt="normal_01">
+        <img src="img/normal_02.png" alt="normal_02">
+        <img src="img/normal_03.png" alt="normal_03">
+        <img src="img/normal_04.png" alt="normal_04">
+    </div>
+
+
+
+    
+</body>
+</html>
